@@ -46,6 +46,22 @@ def display_search(row):
     listbox.insert("end", row)
 
 
+# display_all() is a function displayes all data in data base
+
+
+def display_all():
+    conn = psycopg2.connect(dbname="studentdb", user="postgres", password="example", host="localhost", port="5432")
+    cur = conn.cursor()
+    query = """select * from student"""
+    cur.execute(query)
+    row = cur.fetchall()
+
+    listbox = tk.Listbox(frame, width=20, height=5)
+    listbox.grid(row=10, column=1)
+    for x in row:
+        listbox.insert("end", x)
+
+
 # implementing canvas to our app
 canvas = tk.Canvas(root, height=480, width=900)
 canvas.pack()
@@ -94,5 +110,13 @@ entry_id.grid(row=6, column=1)
 # search button get`s the entry of search by id and connect`s to a function
 search_button = tk.Button(frame, text="Search", command=lambda: search(entry_id.get()))
 search_button.grid(row=6, column=2)
+
+# adding label to start of display all section
+label = tk.Label(frame, text="Display All")
+label.grid(row=7, column=1)
+
+# search all buttom is calling a function to siplay all data inside database
+display_all_button = tk.Button(frame, text="Display all", command=lambda: display_all())
+display_all_button.grid(row=8, column=1)
 
 root.mainloop()
