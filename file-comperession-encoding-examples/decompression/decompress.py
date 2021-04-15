@@ -19,5 +19,6 @@ compression_file = open("compressed.txt", "w")
 # now we write our decoded file into our compressed.txt file
 compression_file.write(decoded_data)
 
+# here we first encode oue compress_data then decompress it and save it in a object or variable
 decompressed_data = zlib.decompress(base64.b64decode(compress_data))
 print(decompressed_data)
