@@ -1,0 +1,17 @@
+<!--it means we use base.html(the use of bootstrap and navbar(placed in body and head tag of base.html)) in this file -->
+{% extends "myapp/base.html" %}
+
+{% block body %}
+
+    <!--book_list comes from views.py we pass it in context-->
+    <!--we use django template language so we put our book_list inside double brockets-->
+    <!--writing for loop with template language-->
+    <!--for showing our book_list not in same line-->
+    {% for book in book_list %}
+        {{book.id}} -
+        <a href="{% url "myapp:detail" book.id %}"> {{book.name}} </a><br>
+        <!--herf= url detail book.id HERE we have a path in url.py which name is detail we pass that name-->
+        <!--we say our url name is detail and with book.id we pass it -->
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+<!--here we use base.html all head and body tag-->
+{% extends "myapp/base.html" %}
+
+<!--this block with the name of body is the same block in base.html-->
+<!--we can use it because we extend detail.html from base.html-->
+{% block body %}
+
+    name :-> {{book.name}} <br>
+    description :-> {{book.desc}} <br>
+    price :-> {{book.price}} <br>
+
+{% endblock %}
