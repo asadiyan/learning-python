@@ -1,0 +1,8 @@
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!--we have passed a conext ti this page from veiws.py-->
+    <!--inside context we have form we have passed it-->
+    <!--we get all feilds from form=BookForm is class and it has feilds-->
+    {{form.as_p}}
+    <input type="submit" name="" id="">
+</form>

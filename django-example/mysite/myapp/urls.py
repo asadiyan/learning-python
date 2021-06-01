@@ -13,4 +13,7 @@ urlpatterns = [
     # then because it is a intiger value
     # we covert it like this
     path("book/<int:book_id>/", views.detail, name="detail"),
+    path("add/", views.add_book, name="add_book"),
+    path("edit/<int:id>/", views.edit, name="edit"),
+    path("delete/<int:id>/", views.delete, name="delete"),
 ]

@@ -1,0 +1,14 @@
+<!--THIS PAGE IS ONE WAY OF CREATEING FORM USING HTML-->
+<!--we want to create a form here so we use the form tag-->
+<!--here we use method atribute and we use post because we will post data to database-->
+<!--ency is to make submit button work-->
+<form method="POST" enctype="multipart/form-data">
+    <!--inside any form we create in django what we need to do is adding token called csrf_token-->
+    {% csrf_token %}
+    <!--this is a input feild accepting text from user and it has name also it should be same as in arguments in models.py-->
+    <input type="text" name="name" id="name" placeholder="enter the name of book">
+    <input type="text" name="desc" id="desc" placeholder="enter book description">
+    <input type="text" name="price" id="price" placeholder="enter the price of book">
+    <input type="file" name="book_image" id="book_image">
+    <input type="submit" name="" id=""> 
+</form>

@@ -119,3 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+# os means operation system in this pc
+# we make media directory in this app with base_dir path
+# and we make it join
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# we save our media path in media_url
+MEDIA_URL = '/media/'

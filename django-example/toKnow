@@ -1,12 +1,15 @@
 ;;;;;; to start a project with django ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     django-admin startproject my-project-name
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;; to start a app inside of our django project ;;;;;;;;;;;;;;;;;;;;;;;;;;;
     django-admin startapp my-app-name
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;; at first step for local host we need to go to my-project-name directory
 ;;;;;; in there we have manage.py the: ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     python manage.py runserver
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;; in views we define functions to show ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;; in models we define classes ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -16,11 +19,25 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;; after we create class inside models.py ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     python manage.py makemigrations
+
 ;;;;;; this command goes to models.py looks for new class`s;;;;;;;;;;;;;;;;;;;
 ;;;;;; each class is a table in database ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;; after that for creating table this code should be run ;;;;;;;;;;;;;;;;;
     python manage.py migrate
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;; for creating super user ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     python manage.py createsuperuser
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;; for adding any feild to our models ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;; first we add the model to models.py ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;; then we go to our teminal and we run ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py runserver
+
+;;;;;; for adiing image field in django after doing adding feild tools ;;;;;;;
+;;;;;; we install a module which is pillow ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    pip install pillow
 
