@@ -5,17 +5,25 @@
 <!--we can use it because we extend detail.html from base.html-->
 {% block body %}
 
-    <img width="100" height="100" src="{{book.book_image.url}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img width="300" height="300" src="{{book.book_image.url}}"> 
+            </div>
+            <div class="col-md-6">
+                <h2> {{book.name}} </h2>
 
-    <h2> {{book.name}} </h2>
+                <h4> {{book.desc}} </h4>
 
-    <h4> {{book.desc}} </h4>
+                <h6> {{book.price}} </h6>
 
-    <h6> {{book.price}} </h6>
+                <!--we are adding link here and the link is for edit veiw so edit veiw has a path in the urls.py-->
+                <!--now here we have a button or linke in detail page wiyh name of edit by clicking on it we go to edit.html of that book-->
+                <a class="btn btn-warning" href="{% url "myapp:edit" book.id  %}">edit</a>
+                <a class="btn btn-danger" href="{% url "myapp:delete" book.id %}">delete</a>
 
-    <!--we are adding link here and the link is for edit veiw so edit veiw has a path in the urls.py-->
-    <!--now here we have a button or linke in detail page wiyh name of edit by clicking on it we go to edit.html of that book-->
-    <a class="btn btn-warning" href="{% url "myapp:edit" book.id  %}">edit</a>
-    <a class="btn btn-danger" href="{% url "myapp:delete" book.id %}">delete</a>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

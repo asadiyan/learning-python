@@ -3,15 +3,31 @@
 
 {% block body %}
 
+    <!--here we make the design as card card in 4 column-->
+    <div class="container">
+        <div class="row">
+            {% for book in book_list %}
+            <!--with col-md-3 we say that we have 4 column 12/3 = 4-->
+            <div class="col-md-3">
+                <!--when we use class as card bootstrap convert it as card-->
+                    <div class="card">
+                        <!--with using card-img-top class we put the image in the top of card-->
+                        <img src="{{book.book_image.url}}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{book.name}}</h5>
+                            <p class="card-text">{{book.price}}</p>
+                            <a class="btn btn-primary" href="{% url "myapp:detail" book.id %}">view Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
     <!--book_list comes from views.py we pass it in context-->
     <!--we use django template language so we put our book_list inside double brockets-->
     <!--writing for loop with template language-->
     <!--for showing our book_list not in same line-->
-    {% for book in book_list %}
-        {{book.id}} -
-        <a href="{% url "myapp:detail" book.id %}"> {{book.name}} </a><br>
-        <!--herf= url detail book.id HERE we have a path in url.py which name is detail we pass that name-->
-        <!--we say our url name is detail and with book.id we pass it -->
-    {% endfor %}
-
+    <!--herf= url detail book.id HERE we have a path in url.py which name is detail we pass that name-->
+    <!--we say our url name is detail and with book.id we pass it-->
 {% endblock %}
